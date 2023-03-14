@@ -14,6 +14,7 @@ import {
   useColorModeValue,
   useBreakpointValue,
   useDisclosure,
+  ButtonGroup,
 } from "@chakra-ui/react"
 import {
   HamburgerIcon,
@@ -21,6 +22,14 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from "@chakra-ui/icons"
+
+const handleClickScroll = (scrollTo?: string) => {
+  const element = document.getElementById(scrollTo ?? "home")
+  if (element) {
+    // 👇 Will scroll smoothly to the top of the next section
+    element.scrollIntoView({ behavior: "smooth" })
+  }
+}
 
 export const Header = () => {
   const { isOpen, onToggle } = useDisclosure()
@@ -92,9 +101,8 @@ const DesktopNav = () => {
         <Box key={navItem.label}>
           <Popover trigger={"hover"} placement={"bottom-start"}>
             <PopoverTrigger>
-              <Link
+              <ButtonGroup
                 p={2}
-                href={navItem.href ?? "#"}
                 fontSize={"sm"}
                 fontWeight={500}
                 color={linkColor}
@@ -102,9 +110,10 @@ const DesktopNav = () => {
                   textDecoration: "none",
                   color: linkHoverColor,
                 }}
+                onClick={() => handleClickScroll(navItem.scrollTo)}
               >
                 {navItem.label}
-              </Link>
+              </ButtonGroup>
             </PopoverTrigger>
 
             {navItem.children && (
@@ -130,10 +139,10 @@ const DesktopNav = () => {
   )
 }
 
-const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
+const DesktopSubNav = ({ label, scrollTo, subLabel }: NavItem) => {
   return (
-    <Link
-      href={href}
+    <ButtonGroup
+      onClick={() => handleClickScroll(scrollTo)}
       role={"group"}
       display={"block"}
       p={2}
@@ -163,7 +172,7 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
           <Icon color={"pink.400"} w={5} h={5} as={ChevronRightIcon} />
         </Flex>
       </Stack>
-    </Link>
+    </ButtonGroup>
   )
 }
 
@@ -181,15 +190,15 @@ const MobileNav = () => {
   )
 }
 
-const MobileNavItem = ({ label, children, href }: NavItem) => {
+const MobileNavItem = ({ label, children, scrollTo }: NavItem) => {
   const { isOpen, onToggle } = useDisclosure()
 
   return (
     <Stack spacing={4} onClick={children && onToggle}>
       <Flex
+        onClick={() => handleClickScroll(scrollTo)}
         py={2}
         as={Link}
-        href={href ?? "#"}
         justify={"space-between"}
         align={"center"}
         _hover={{
@@ -224,9 +233,13 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
         >
           {children &&
             children.map((child) => (
-              <Link key={child.label} py={2} href={child.href}>
+              <ButtonGroup
+                key={child.label}
+                py={2}
+                onClick={() => handleClickScroll(child.scrollTo)}
+              >
                 {child.label}
-              </Link>
+              </ButtonGroup>
             ))}
         </Stack>
       </Collapse>
@@ -238,12 +251,13 @@ interface NavItem {
   label: string
   subLabel?: string
   children?: Array<NavItem>
-  href?: string
+  scrollTo?: string
 }
 
 const NAV_ITEMS: Array<NavItem> = [
   {
-    label: "Inspiration",
+    label: "Carousel",
+    scrollTo: "carousel",
     // children: [
     //   {
     //     label: "Explore Design Work",
@@ -258,7 +272,8 @@ const NAV_ITEMS: Array<NavItem> = [
     // ],
   },
   {
-    label: "Find Work",
+    label: "Nuestra Historia",
+    scrollTo: "ourHistory",
     // children: [
     //   {
     //     label: "Job Board",
@@ -273,11 +288,11 @@ const NAV_ITEMS: Array<NavItem> = [
     // ],
   },
   {
-    label: "Learn Design",
-    href: "#",
+    label: "Que nos caracteriza",
+    scrollTo: "heading",
   },
   {
-    label: "Hire Designers",
-    href: "#",
+    label: "Testimonios",
+    scrollTo: "testimonials",
   },
 ]

@@ -10,6 +10,8 @@ import {
 } from "@chakra-ui/react"
 import { FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa"
 import { ReactNode } from "react"
+import { WhatsAppWidget } from "react-whatsapp-widget"
+import "react-whatsapp-widget/dist/index.css"
 
 const Logo = (props: any) => {
   return (
@@ -114,6 +116,14 @@ export const Footer = () => {
           </Stack>
         </Container>
       </Box>
+      <WhatsAppWidget
+        phoneNumber="+543516500110"
+        companyName="MDDI"
+        replyTimeText="Normalmente responde en pocos minutos"
+        message={`Hola, ¿cómo estás? Gracias por contactarnos. Por favor dejanos tu consulta y te responderemos a la brevedad.`}
+        inputPlaceHolder="Escribe tu mensaje"
+        sendButtonText="Enviar consulta"
+      />
     </Box>
   )
 }

@@ -1,3 +1,7 @@
+import { GridList } from "@/components/modules/cards"
+import { Carousel } from "@/components/modules/carousel"
+import { Features } from "@/components/modules/feature"
+import { Testimonials } from "@/components/modules/testimonials"
 import {
   Container,
   Stack,
@@ -8,109 +12,113 @@ import {
   Button,
   Image,
   Icon,
-  IconButton,
-  createIcon,
   IconProps,
   useColorModeValue,
 } from "@chakra-ui/react"
 
 export default function CallToActionWithVideo() {
   return (
-    <Container maxW={"7xl"}>
-      <Stack
-        align={"center"}
-        spacing={{ base: 8, md: 10 }}
-        py={{ base: 20, md: 28 }}
-        direction={{ base: "column", md: "row" }}
-      >
-        <Stack flex={1} spacing={{ base: 5, md: 10 }}>
-          <Heading
-            lineHeight={1.1}
-            fontWeight={600}
-            fontSize={{ base: "3xl", sm: "4xl", lg: "6xl" }}
-          >
-            <Text
-              as={"span"}
-              position={"relative"}
-              _after={{
-                content: "''",
-                width: "full",
-                height: "30%",
-                position: "absolute",
-                bottom: 1,
-                left: 0,
-                bg: "red.400",
-                zIndex: -1,
-              }}
-            >
-              Lorem ipsum
-            </Text>
-            <br />
-            <Text as={"span"} color={"red.400"}>
-              Lorem ipsum dolor
-            </Text>
-          </Heading>
-          <Text color={"gray.500"}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco l
-          </Text>
-          <Stack
-            spacing={{ base: 4, sm: 6 }}
-            direction={{ base: "column", sm: "row" }}
-          >
-            <Button
-              rounded={"full"}
-              size={"lg"}
-              fontWeight={"normal"}
-              px={6}
-              colorScheme={"red"}
-              bg={"red.400"}
-              _hover={{ bg: "red.500" }}
-            >
-              Get started
-            </Button>
-            <Button rounded={"full"} size={"lg"} fontWeight={"normal"} px={6}>
-              How It Works
-            </Button>
-          </Stack>
-        </Stack>
-        <Flex
-          flex={1}
-          justify={"center"}
+    <>
+      <Container maxW={"7xl"}>
+        <Stack
           align={"center"}
-          position={"relative"}
-          w={"full"}
+          spacing={{ base: 8, md: 10 }}
+          py={{ base: 20, md: 28 }}
+          direction={{ base: "column", md: "row" }}
         >
-          <Blob
-            w={"150%"}
-            h={"150%"}
-            position={"absolute"}
-            top={"-20%"}
-            left={0}
-            zIndex={-1}
-            color={useColorModeValue("red.50", "red.400")}
-          />
-          <Box
+          <Stack flex={1} spacing={{ base: 5, md: 10 }}>
+            <Heading
+              lineHeight={1.1}
+              fontWeight={600}
+              fontSize={{ base: "3xl", sm: "4xl", lg: "6xl" }}
+            >
+              <Text
+                as={"span"}
+                position={"relative"}
+                _after={{
+                  content: "''",
+                  width: "full",
+                  height: "30%",
+                  position: "absolute",
+                  bottom: 1,
+                  left: 0,
+                  bg: "red.400",
+                  zIndex: -1,
+                }}
+              >
+                Lorem ipsum
+              </Text>
+              <br />
+              <Text as={"span"} color={"red.400"}>
+                Lorem ipsum dolor
+              </Text>
+            </Heading>
+            <Text color={"gray.500"}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco l
+            </Text>
+            <Stack
+              spacing={{ base: 4, sm: 6 }}
+              direction={{ base: "column", sm: "row" }}
+            >
+              <Button
+                rounded={"full"}
+                size={"lg"}
+                fontWeight={"normal"}
+                px={6}
+                colorScheme={"red"}
+                bg={"red.400"}
+                _hover={{ bg: "red.500" }}
+              >
+                Get started
+              </Button>
+              <Button rounded={"full"} size={"lg"} fontWeight={"normal"} px={6}>
+                How It Works
+              </Button>
+            </Stack>
+          </Stack>
+          <Flex
+            flex={1}
+            justify={"center"}
+            align={"center"}
             position={"relative"}
-            height={"300px"}
-            rounded={"2xl"}
-            boxShadow={"2xl"}
-            width={"full"}
-            overflow={"hidden"}
+            w={"full"}
           >
-            <Image
-              alt={"Hero Image"}
-              fit={"cover"}
-              align={"center"}
-              w={"100%"}
-              h={"100%"}
-              src="/hero.webp"
+            <Blob
+              w={"150%"}
+              h={"150%"}
+              position={"absolute"}
+              top={"-20%"}
+              left={0}
+              zIndex={-1}
+              color={useColorModeValue("red.50", "red.400")}
             />
-          </Box>
-        </Flex>
-      </Stack>
-    </Container>
+            <Box
+              position={"relative"}
+              height={"300px"}
+              rounded={"2xl"}
+              boxShadow={"2xl"}
+              width={"full"}
+              overflow={"hidden"}
+            >
+              <Image
+                alt={"Hero Image"}
+                fit={"cover"}
+                align={"center"}
+                w={"100%"}
+                h={"100%"}
+                src="/hero.webp"
+              />
+            </Box>
+          </Flex>
+        </Stack>
+      </Container>
+      <Carousel />
+      <Features />
+      <GridList />
+      <Testimonials />
+    </>
   )
 }
 
