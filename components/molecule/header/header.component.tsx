@@ -3,7 +3,6 @@ import {
   Flex,
   Text,
   IconButton,
-  Button,
   Stack,
   Collapse,
   Icon,
@@ -12,9 +11,9 @@ import {
   PopoverTrigger,
   PopoverContent,
   useColorModeValue,
-  useBreakpointValue,
   useDisclosure,
   ButtonGroup,
+  Image,
 } from "@chakra-ui/react"
 import {
   HamburgerIcon,
@@ -26,7 +25,6 @@ import {
 const handleClickScroll = (scrollTo?: string) => {
   const element = document.getElementById(scrollTo ?? "home")
   if (element) {
-    // 👇 Will scroll smoothly to the top of the next section
     element.scrollIntoView({ behavior: "smooth" })
   }
 }
@@ -41,7 +39,7 @@ export const Header = () => {
         color={useColorModeValue("gray.600", "white")}
         minH={"60px"}
         py={{ base: 2 }}
-        px={{ base: 4 }}
+        px={{ base: 10 }}
         borderBottom={1}
         borderStyle={"solid"}
         borderColor={useColorModeValue("gray.200", "gray.900")}
@@ -62,13 +60,14 @@ export const Header = () => {
           />
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
-          <Text
-            textAlign={useBreakpointValue({ base: "center", md: "left" })}
-            fontFamily={"heading"}
-            color={useColorModeValue("gray.800", "white")}
-          >
-            Logo
-          </Text>
+          <Image
+            alt={"Hero Image"}
+            fit={"cover"}
+            align={"center"}
+            w={"150px"}
+            h={"50px"}
+            src="/brand.png"
+          />
 
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
             <DesktopNav />
@@ -91,8 +90,8 @@ export const Header = () => {
 }
 
 const DesktopNav = () => {
-  const linkColor = useColorModeValue("gray.600", "gray.200")
-  const linkHoverColor = useColorModeValue("gray.800", "white")
+  const linkColor = useColorModeValue("blue.600", "blue.200")
+  const linkHoverColor = useColorModeValue("blue.800", "white")
   const popoverContentBgColor = useColorModeValue("white", "gray.800")
 
   return (
@@ -103,12 +102,12 @@ const DesktopNav = () => {
             <PopoverTrigger>
               <ButtonGroup
                 p={2}
-                fontSize={"sm"}
+                fontSize={"large"}
                 fontWeight={500}
                 color={linkColor}
                 _hover={{
-                  textDecoration: "none",
                   color: linkHoverColor,
+                  cursor: "pointer",
                 }}
                 onClick={() => handleClickScroll(navItem.scrollTo)}
               >
@@ -192,6 +191,8 @@ const MobileNav = () => {
 
 const MobileNavItem = ({ label, children, scrollTo }: NavItem) => {
   const { isOpen, onToggle } = useDisclosure()
+  const linkColor = useColorModeValue("blue.600", "blue.200")
+  const linkHoverColor = useColorModeValue("blue.800", "white")
 
   return (
     <Stack spacing={4} onClick={children && onToggle}>
@@ -201,13 +202,15 @@ const MobileNavItem = ({ label, children, scrollTo }: NavItem) => {
         as={Link}
         justify={"space-between"}
         align={"center"}
-        _hover={{
-          textDecoration: "none",
-        }}
       >
         <Text
           fontWeight={600}
-          color={useColorModeValue("gray.600", "gray.200")}
+          color={linkColor}
+          _hover={{
+            color: linkHoverColor,
+            cursor: "pointer",
+            textDecoration: "none",
+          }}
         >
           {label}
         </Text>

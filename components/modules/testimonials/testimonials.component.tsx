@@ -65,37 +65,18 @@ const TestimonialText = ({ children }: { children: ReactNode }) => {
   )
 }
 
-const TestimonialAvatar = ({
-  src,
-  name,
-  title,
-}: {
-  src: string
-  name: string
-  title: string
-}) => {
-  return (
-    <Flex align={"center"} mt={8} direction={"column"}>
-      <Avatar src={src} mb={2} />
-      <Stack spacing={-1} align={"center"}>
-        <Text fontWeight={600}>{name}</Text>
-        <Text fontSize={"sm"} color={useColorModeValue("gray.600", "gray.400")}>
-          {title}
-        </Text>
-      </Stack>
-    </Flex>
-  )
-}
+const TestimonialAvatar = () => (
+  <Flex align={"center"} mt={8} direction={"column"}>
+    <Avatar src="/industry.png" mb={2} size="lg" />
+  </Flex>
+)
 
 export const WithSpeechBubbles = () => {
   return (
     <Box bg={useColorModeValue("gray.100", "gray.700")} id="testimonials">
       <Container maxW={"7xl"} py={16} as={Stack} spacing={12}>
         <Stack spacing={0} align={"center"}>
-          <Heading>Nuestros Clientes dicen</Heading>
-          <Text>
-            Hemos estado trabajando con clientes de diferentes regiones
-          </Text>
+          <Heading>Quienes confiaron en nosotros</Heading>
         </Stack>
         <Stack
           direction={{ base: "column", md: "row" }}
@@ -109,13 +90,7 @@ export const WithSpeechBubbles = () => {
                 neque sed imperdiet nibh lectus feugiat nunc sem.
               </TestimonialText>
             </TestimonialContent>
-            <TestimonialAvatar
-              src={
-                "https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80"
-              }
-              name={"Jane Cooper"}
-              title={"CEO at ABC Corporation"}
-            />
+            <TestimonialAvatar />
           </Testimonial>
           <Testimonial>
             <TestimonialContent>
@@ -125,13 +100,7 @@ export const WithSpeechBubbles = () => {
                 neque sed imperdiet nibh lectus feugiat nunc sem.
               </TestimonialText>
             </TestimonialContent>
-            <TestimonialAvatar
-              src={
-                "https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80"
-              }
-              name={"Jane Cooper"}
-              title={"CEO at ABC Corporation"}
-            />
+            <TestimonialAvatar />
           </Testimonial>
           <Testimonial>
             <TestimonialContent>
@@ -141,13 +110,7 @@ export const WithSpeechBubbles = () => {
                 neque sed imperdiet nibh lectus feugiat nunc sem.
               </TestimonialText>
             </TestimonialContent>
-            <TestimonialAvatar
-              src={
-                "https://images.unsplash.com/photo-1586297135537-94bc9ba060aa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80"
-              }
-              name={"Jane Cooper"}
-              title={"CEO at ABC Corporation"}
-            />
+            <TestimonialAvatar />
           </Testimonial>
         </Stack>
       </Container>

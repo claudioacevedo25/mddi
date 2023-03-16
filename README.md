@@ -36,3 +36,28 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Details
+
+MDDI Desarrollos de ing
+
+Somos una oficina tecnica abocada a la demanda de las industrias de proceso.
+Damos respuestas a las exigencias del mercado actual.
+
+"Potenciando el futuro de las industrias de proceso: Soluciones innovadoras y adaptativas para un mundo en constante evolución"
+
+https://www.istockphoto.com/es/foto/horno-de-cemento-gm535476960-94948587
+
+para el carrusel
+Nacionalizacion de repuestos
+ing para mejoras en planta
+calculo y verificaciones estructurales
+proyectos de ampliacion en planta
+modalado 3d
+
+para el our history
+https://pixabay.com/photos/paper-company-drawings-freelance-3225109/
+Ubicados en la ciudad de Alta Gracia,
+
+Quienes confian en nosotros
+holcim - Edasa - Saint Gobain - Porta - Saxum - Vidmar Group -

@@ -40,22 +40,20 @@ export const CaptionCarousel = () => {
   // This can be static or loaded from a server
   const cards = [
     {
-      title: "Design Projects 1",
-      text: "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
-      image:
-        "https://images.unsplash.com/photo-1516796181074-bf453fbfa3e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=900&q=60",
+      title: "Nacionalizacion de repuestos",
+      image: "/cement1.jpg",
     },
     {
-      title: "Design Projects 2",
-      text: "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
-      image:
-        "https://images.unsplash.com/photo-1438183972690-6d4658e3290e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2274&q=80",
+      title: "Ingeniería para mejoras en planta",
+      image: "/cement2.jpeg",
     },
     {
-      title: "Design Projects 3",
-      text: "The project board is an exclusive resource for contract work. It's perfect for freelancers, agencies, and moonlighters.",
-      image:
-        "https://images.unsplash.com/photo-1507237998874-b4d52d1dd655?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDR8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=900&q=60",
+      title: "Cálculo y verificaciones estructurales",
+      image: "/cement3d.jpeg",
+    },
+    {
+      title: "Modelado 3D",
+      image: "/cement2.jpeg",
     },
   ]
 
@@ -127,12 +125,12 @@ export const CaptionCarousel = () => {
                 top="50%"
                 transform="translate(0, -50%)"
               >
-                <Heading fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}>
+                {/* <Heading
+                  fontSize={{ base: "3xl", md: "5xl", lg: "6xl" }}
+                  color="blue.600" 
+                >
                   {card.title}
-                </Heading>
-                <Text fontSize={{ base: "md", lg: "lg" }} color="GrayText">
-                  {card.text}
-                </Text>
+                </Heading> */}
               </Stack>
             </Container>
           </Box>

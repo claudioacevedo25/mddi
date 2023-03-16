@@ -9,7 +9,6 @@ import {
   Box,
   Heading,
   Text,
-  Button,
   Image,
   Icon,
   IconProps,
@@ -42,21 +41,19 @@ export default function CallToActionWithVideo() {
                   position: "absolute",
                   bottom: 1,
                   left: 0,
-                  bg: "red.400",
+                  bg: "blue.600",
                   zIndex: -1,
                 }}
               >
-                Lorem ipsum
+                MDDI
               </Text>
               <br />
-              <Text as={"span"} color={"red.400"}>
-                Lorem ipsum dolor
+              <Text as={"span"} color={"blue.500"}>
+                Desarrollo de ingienería
               </Text>
             </Heading>
-            <Text color={"gray.500"}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco l
+            <Text color={"gray.600"} fontSize={{ sm: "2xl", lg: "3xl" }}>
+              {`"Potenciando el futuro de las industrias de proceso: Soluciones innovadoras y adaptativas para un mundo en constante evolución"`}
             </Text>
             <Stack
               spacing={{ base: 4, sm: 6 }}
@@ -89,11 +86,11 @@ export default function CallToActionWithVideo() {
             >
               <Image
                 alt={"Hero Image"}
-                fit={"cover"}
+                fit={"fill"}
                 align={"center"}
                 w={"100%"}
                 h={"100%"}
-                src="/hero.webp"
+                src="/logo1.png"
               />
             </Box>
           </Flex>
