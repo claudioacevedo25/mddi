@@ -1,75 +1,65 @@
-import { ReactNode } from "react"
 import {
   Box,
-  Flex,
   Heading,
-  Text,
   Stack,
   Container,
-  Avatar,
   useColorModeValue,
+  Link,
+  Image,
 } from "@chakra-ui/react"
 
-const Testimonial = ({ children }: { children: ReactNode }) => {
-  return <Box>{children}</Box>
-}
+const TESTIMONIALS = [
+  {
+    id: 1,
+    src: "/holcim.png",
+    href: "https://www.holcim.com.ar",
+  },
+  {
+    id: 2,
+    src: "/edasa.png",
+    href: "https://www.koandina.com",
+  },
+  {
+    id: 3,
+    src: "/saintGobain.png",
+    href: "https://www.saint-gobain.ar/es",
+  },
+  {
+    id: 4,
+    src: "/porta.png",
+    href: "https://portahnos.com.ar",
+  },
+  {
+    id: 5,
+    src: "/saxum.jpeg",
+    href: "https://saxuming.net",
+  },
+  {
+    id: 5,
+    src: "/vidmar.png",
+    href: "https://vidmargroup.com/es",
+  },
+]
 
-const TestimonialContent = ({ children }: { children: ReactNode }) => {
+const TestimonialContent = ({ href, src }: { src: string; href: string }) => {
   return (
     <Stack
       bg={useColorModeValue("white", "gray.800")}
-      boxShadow={"lg"}
-      p={8}
-      rounded={"xl"}
-      align={"center"}
-      pos={"relative"}
-      _after={{
-        content: `""`,
-        w: 0,
-        h: 0,
-        borderLeft: "solid transparent",
-        borderLeftWidth: 16,
-        borderRight: "solid transparent",
-        borderRightWidth: 16,
-        borderTop: "solid",
-        borderTopWidth: 16,
-        borderTopColor: useColorModeValue("white", "gray.800"),
-        pos: "absolute",
-        bottom: "-16px",
-        left: "50%",
-        transform: "translateX(-50%)",
+      boxShadow="lg"
+      p={6}
+      rounded="xl"
+      align="center"
+      justifyContent="center"
+      _hover={{
+        boxShadow: "xl",
       }}
     >
-      {children}
+      <Link href={href} isExternal>
+        <Image boxSize="150px" alt={src} src={src} objectFit="contain" />
+      </Link>
     </Stack>
   )
 }
-
-const TestimonialHeading = ({ children }: { children: ReactNode }) => {
-  return (
-    <Heading as={"h3"} fontSize={"xl"}>
-      {children}
-    </Heading>
-  )
-}
-
-const TestimonialText = ({ children }: { children: ReactNode }) => {
-  return (
-    <Text
-      textAlign={"center"}
-      color={useColorModeValue("gray.600", "gray.400")}
-      fontSize={"sm"}
-    >
-      {children}
-    </Text>
-  )
-}
-
-const TestimonialAvatar = () => (
-  <Flex align={"center"} mt={8} direction={"column"}>
-    <Avatar src="/industry.png" mb={2} size="lg" />
-  </Flex>
-)
 
 export const WithSpeechBubbles = () => {
   return (
@@ -82,36 +72,11 @@ export const WithSpeechBubbles = () => {
           direction={{ base: "column", md: "row" }}
           spacing={{ base: 10, md: 4, lg: 10 }}
         >
-          <Testimonial>
-            <TestimonialContent>
-              <TestimonialHeading>Efficient Collaborating</TestimonialHeading>
-              <TestimonialText>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor
-                neque sed imperdiet nibh lectus feugiat nunc sem.
-              </TestimonialText>
-            </TestimonialContent>
-            <TestimonialAvatar />
-          </Testimonial>
-          <Testimonial>
-            <TestimonialContent>
-              <TestimonialHeading>Intuitive Design</TestimonialHeading>
-              <TestimonialText>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor
-                neque sed imperdiet nibh lectus feugiat nunc sem.
-              </TestimonialText>
-            </TestimonialContent>
-            <TestimonialAvatar />
-          </Testimonial>
-          <Testimonial>
-            <TestimonialContent>
-              <TestimonialHeading>Mindblowing Service</TestimonialHeading>
-              <TestimonialText>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor
-                neque sed imperdiet nibh lectus feugiat nunc sem.
-              </TestimonialText>
-            </TestimonialContent>
-            <TestimonialAvatar />
-          </Testimonial>
+          {TESTIMONIALS.map(({ id, href, src }) => (
+            <Box key={id}>
+              <TestimonialContent href={href} src={src} />
+            </Box>
+          ))}
         </Stack>
       </Container>
     </Box>
