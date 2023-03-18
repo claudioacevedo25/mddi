@@ -21,19 +21,13 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from "@chakra-ui/icons"
-
-const handleClickScroll = (scrollTo?: string) => {
-  const element = document.getElementById(scrollTo ?? "home")
-  if (element) {
-    element.scrollIntoView({ behavior: "smooth" })
-  }
-}
+import { handleClickScroll } from "@/helpers/handleClickScroll"
 
 export const Header = () => {
   const { isOpen, onToggle } = useDisclosure()
 
   return (
-    <Box>
+    <Box id="home">
       <Flex
         bg={useColorModeValue("white", "gray.800")}
         color={useColorModeValue("gray.600", "white")}
@@ -259,7 +253,7 @@ interface NavItem {
 
 const NAV_ITEMS: Array<NavItem> = [
   {
-    label: "Carousel",
+    label: "Ingeniería",
     scrollTo: "carousel",
     // children: [
     //   {
@@ -275,7 +269,7 @@ const NAV_ITEMS: Array<NavItem> = [
     // ],
   },
   {
-    label: "Nuestra Historia",
+    label: "Sobre Nosotros",
     scrollTo: "ourHistory",
     // children: [
     //   {
@@ -291,7 +285,7 @@ const NAV_ITEMS: Array<NavItem> = [
     // ],
   },
   {
-    label: "Que nos caracteriza",
+    label: "Ejemplos",
     scrollTo: "heading",
   },
   {
@@ -299,3 +293,5 @@ const NAV_ITEMS: Array<NavItem> = [
     scrollTo: "testimonials",
   },
 ]
+
+export { NAV_ITEMS }

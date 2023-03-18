@@ -11,10 +11,10 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react"
 import {
-  IoAnalyticsSharp,
-  IoBarChart,
   IoSearchSharp,
-  IoBookmarks,
+  IoBusinessSharp,
+  IoConstruct,
+  IoCogSharp,
 } from "react-icons/io5"
 import { ReactElement } from "react"
 
@@ -49,21 +49,17 @@ export const SplitWithImage = () => {
         <Stack spacing={4}>
           <Text
             textTransform={"uppercase"}
-            color={"blue.400"}
+            color={"blue.200"}
             fontWeight={600}
             fontSize={"sm"}
-            bg={useColorModeValue("blue.50", "blue.900")}
+            bg={useColorModeValue("blue.400", "blue.900")}
             p={2}
             alignSelf={"flex-start"}
             rounded={"md"}
           >
-            Our Story
+            Sobre nosotros
           </Text>
-          <Heading>A digital Product design agency</Heading>
-          <Text color={"gray.500"} fontSize={"lg"}>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore
-          </Text>
+          <Heading>Soluciones pensadas a medida para su negocio</Heading>
           <Stack
             spacing={4}
             divider={
@@ -74,13 +70,13 @@ export const SplitWithImage = () => {
           >
             <Feature
               icon={
-                <Icon as={IoAnalyticsSharp} color={"yellow.500"} w={5} h={5} />
+                <Icon as={IoBusinessSharp} color={"yellow.500"} w={5} h={5} />
               }
               iconBg={useColorModeValue("yellow.100", "yellow.900")}
               text={"Diseño mecánico y estructural"}
             />
             <Feature
-              icon={<Icon as={IoBarChart} color={"green.500"} w={5} h={5} />}
+              icon={<Icon as={IoConstruct} color={"green.500"} w={5} h={5} />}
               iconBg={useColorModeValue("green.100", "green.900")}
               text={"Relevamiento en campo"}
             />
@@ -92,9 +88,9 @@ export const SplitWithImage = () => {
               text={"Cálculo y dimensionamiento de equipos"}
             />
             <Feature
-              icon={<Icon as={IoBookmarks} color={"blue.500"} w={5} h={5} />}
+              icon={<Icon as={IoCogSharp} color={"blue.500"} w={5} h={5} />}
               iconBg={useColorModeValue("blue.100", "blue.900")}
-              text={"Instalaciones industriales eficientes diseñadas"}
+              text={"Instalaciones industriales eficientemente diseñadas"}
             />
           </Stack>
         </Stack>
