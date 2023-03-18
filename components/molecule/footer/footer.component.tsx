@@ -36,7 +36,10 @@ export const Footer = () => {
         <Stack direction={"row"} spacing={6} py={4}>
           <Button
             bg={useColorModeValue("blue.400", "blue.800")}
-            color={useColorModeValue("white", "white")}
+            color={useColorModeValue("white", "blue.800")}
+            _hover={{
+              bg: useColorModeValue("blue.700", "blue.800"),
+            }}
             onClick={() => handleClickScroll()}
           >{`Volver arriba`}</Button>
         </Stack>
