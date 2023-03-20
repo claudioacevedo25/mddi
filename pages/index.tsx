@@ -83,6 +83,7 @@ export default function CallToActionWithVideo() {
               boxShadow={"2xl"}
               width={"full"}
               overflow={"hidden"}
+              backgroundColor="white"
             >
               <Image
                 alt={"Hero Image"}
@@ -90,6 +91,7 @@ export default function CallToActionWithVideo() {
                 align={"center"}
                 w={"100%"}
                 h={"100%"}
+                p={4}
                 src="/logo1.png"
               />
             </Box>

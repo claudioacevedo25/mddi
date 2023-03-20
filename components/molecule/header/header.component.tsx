@@ -14,6 +14,7 @@ import {
   useDisclosure,
   ButtonGroup,
   Image,
+  useMediaQuery,
 } from "@chakra-ui/react"
 import {
   HamburgerIcon,
@@ -25,18 +26,19 @@ import { handleClickScroll } from "@/helpers/handleClickScroll"
 
 export const Header = () => {
   const { isOpen, onToggle } = useDisclosure()
-
+  const [isMobile] = useMediaQuery("(max-width: 400px)")
   return (
     <Box id="home">
       <Flex
         bg={useColorModeValue("white", "gray.800")}
         color={useColorModeValue("gray.600", "white")}
-        minH={"60px"}
+        minH={"80px"}
         py={{ base: 2 }}
-        px={{ base: 10 }}
+        px={{ base: 5 }}
         borderBottom={1}
         borderStyle={"solid"}
         borderColor={useColorModeValue("gray.200", "gray.900")}
+        gap={2}
         align={"center"}
       >
         <Flex
@@ -53,10 +55,10 @@ export const Header = () => {
             aria-label={"Toggle Navigation"}
           />
         </Flex>
-        <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
+        <Flex>
           <Image
             alt={"Hero Image"}
-            fit={"cover"}
+            fit={!isMobile ? "cover" : "fill"}
             align={"center"}
             w={"150px"}
             h={"50px"}
@@ -67,13 +69,6 @@ export const Header = () => {
             <DesktopNav />
           </Flex>
         </Flex>
-
-        <Stack
-          flex={{ base: 1, md: 0 }}
-          justify={"flex-end"}
-          direction={"row"}
-          spacing={6}
-        ></Stack>
       </Flex>
 
       <Collapse in={isOpen} animateOpacity>
@@ -289,7 +284,7 @@ const NAV_ITEMS: Array<NavItem> = [
     scrollTo: "heading",
   },
   {
-    label: "Testimonios",
+    label: "Partners",
     scrollTo: "testimonials",
   },
 ]
