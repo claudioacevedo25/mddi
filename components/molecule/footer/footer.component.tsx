@@ -5,6 +5,7 @@ import {
   Image,
   useColorModeValue,
   Button,
+  Text,
 } from "@chakra-ui/react"
 import { WhatsAppWidget } from "react-whatsapp-widget"
 import "react-whatsapp-widget/dist/index.css"
@@ -32,7 +33,15 @@ export const Footer = () => {
           h={"80px"}
           src="/brand.png"
         />
-
+        <Text
+          color={"gray.600"}
+          fontSize={{ base: "sm", sm: "lg" }}
+          as="span"
+          textAlign="center"
+        >
+          Paraguay 128 P.A 3 - B Centro <br />
+          CP 5186 - Alta Gracia - Córdoba
+        </Text>
         <Stack direction={"row"} spacing={6} py={4}>
           <Button
             bg={useColorModeValue("blue.400", "blue.800")}

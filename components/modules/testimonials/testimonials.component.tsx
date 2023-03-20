@@ -35,7 +35,7 @@ const TESTIMONIALS = [
     href: "https://saxuming.net",
   },
   {
-    id: 5,
+    id: 6,
     src: "/vidmar.png",
     href: "https://vidmargroup.com/es",
   },
