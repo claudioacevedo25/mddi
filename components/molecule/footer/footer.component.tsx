@@ -14,7 +14,7 @@ import { handleClickScroll } from "@/helpers/handleClickScroll"
 export const Footer = () => {
   return (
     <Box
-      bg={useColorModeValue("gray.50", "gray.900")}
+      bg={useColorModeValue("white", "white.900")}
       color={useColorModeValue("gray.700", "gray.200")}
     >
       <Container
