@@ -49,7 +49,7 @@ export default function CallToActionWithVideo() {
               </Text>
               <br />
               <Text as={"span"} color={"blue.500"}>
-                Desarrollo de ingienería
+                Desarrollos de Ingienería
               </Text>
             </Heading>
             <Text color={"gray.600"} fontSize={{ sm: "2xl", lg: "3xl" }}>
